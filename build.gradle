@@ -15,3 +15,10 @@ dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.5.3'
 }
+
+task myTestFireFox(type:Test){
+    systemProperty "driver", "firefox"
+    useTestNG{
+        suites "src\\test\\resources\\testNG.xml"
+    }
+}

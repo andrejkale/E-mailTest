@@ -8,15 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * Created by Andre on 10.09.2017.
  */
- abstract class BasePage {
-   static WebDriver driver;
+ public abstract class BasePage {
+  protected static WebDriver driver;
    static {
        System.setProperty("webdriver.gecko.driver","driver\\geckodriver.exe");
         driver = new FirefoxDriver();
        driver.get(Constants.BASE_URL);
    }
 
-    BasePage() {
+   public BasePage() {
         PageFactory.initElements(driver,this);
     }
 }

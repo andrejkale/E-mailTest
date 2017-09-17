@@ -1,9 +1,7 @@
 package Pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 /**
  * Created by Andre on 10.09.2017.
@@ -20,13 +18,13 @@ public class MailPage extends BasePage {
 
 
 	public String getTextUserName(){
-	 return textUserName.getText();
-    }
-    public void CreateMail(){
+		return textUserName.getText();
+	}
+	public void CreateMail(){
 		createMail.click();
 	}
 	public String getNewInbox(){
-    	return newMail.getTagName();
+		return newMail.getTagName();
 	}
 
 
