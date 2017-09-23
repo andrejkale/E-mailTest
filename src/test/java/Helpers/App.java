@@ -7,8 +7,9 @@ import Pages.MailPage;
  */
 public class App {
     public LoginHelper login = new LoginHelper();
-    public MailPage mailPage = new MailHelper();
+    public MailHelper mailPage = new MailHelper();
     public CommonHelper common = new CommonHelper();
     public NewLetterHelper letter = new NewLetterHelper();
+    public StatusPageHelper statusPage = new StatusPageHelper();
 
 }

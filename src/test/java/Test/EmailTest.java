@@ -1,6 +1,5 @@
 package Test;
 
-import Pages.MailPage;
 import Pages.StatusPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,13 +19,10 @@ public class EmailTest extends BaseTest {
     @Test
     public void testCreateMail() throws Exception {
         app.login.loginValidUser();
-        MailPage page = new MailPage();
-        page.CreateMail();
+        app.mailPage.CreateMail();
         app.letter.sendNewMail();
-        StatusPage statusPage = new StatusPage();
-        statusPage.linkInboxClick();
-        MailPage mailPage = new MailPage();
-        String newInbox = mailPage.getNewInbox();
+        app.statusPage.linkInboxClick();
+        String newInbox = app.mailPage.getNewInbox();
         Assert.assertEquals(newInbox,"i", "New mail is absent");
 
 
