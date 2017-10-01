@@ -1,4 +1,4 @@
-group 'NewTest'
+group 'TestNG'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
@@ -14,11 +14,36 @@ dependencies {
     testCompile group: 'org.testng', name: 'testng', version: '6.11'
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server
     compile group: 'org.seleniumhq.selenium', name: 'selenium-server', version: '3.5.3'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.1'
+
 }
 
-task myTestFireFox(type:Test){
+task myTestFireFox(type:Test) {
     systemProperty "driver", "firefox"
-    useTestNG{
+    testLogging.showStandardStreams = true
+    useTestNG {
         suites "src\\test\\resources\\testNG.xml"
     }
 }
+
+    task myTestEdge(type: Test) {
+        systemProperty "driver", "edge"
+        useTestNG {
+            suites "src\\test\\resources\\testNG.xml"
+        }
+    }
+task myTestIe(type: Test) {
+            systemProperty "driver", "ie"
+            useTestNG {
+                suites "src\\test\\resources\\testNG.xml"
+            }
+        }
+task myTestChrome(type: Test) {
+    systemProperty "driver", "chrome"
+    useTestNG {
+        suites "src\\test\\resources\\testNG.xml"
+    }
+}
+
+

@@ -3,9 +3,13 @@ package Pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Andre on 10.09.2017.
  */
+
 public class MailPage extends BasePage {
 
 	@FindBy(xpath="//li[@class='ho_menu_item']/a/span")
@@ -26,6 +30,9 @@ public class MailPage extends BasePage {
 	public String getNewInbox(){
 		return newMail.getTagName();
 	}
+
+
+
 
 
 
