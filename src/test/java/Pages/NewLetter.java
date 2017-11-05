@@ -17,6 +17,7 @@ public class NewLetter extends BasePage {
 	private WebElement sndMail;
 
 	public void sendMail(String whom, String subject, String text){
+		logger.info(String.format("NewLetter whom -%s, subject -%s, text -%s", whom, subject, text));
 	    inputWhom.sendKeys(whom);
 	    inputSubject.sendKeys(subject);
 	    inputText.sendKeys(text);

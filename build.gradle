@@ -41,6 +41,7 @@ task myTestIe(type: Test) {
         }
 task myTestChrome(type: Test) {
     systemProperty "driver", "chrome"
+    testLogging.showStandardStreams = true
     useTestNG {
         suites "src\\test\\resources\\testNG.xml"
     }
